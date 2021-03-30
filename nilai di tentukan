@@ -1,0 +1,27 @@
+package com.company;
+
+public class NilaiDiTentukan
+{
+    public static void main(String[] args)
+    {
+        Tabung one = new Tabung();
+        double R1 = one.rad = 5;
+        double H1 = one.high = 10;
+
+        System.out.println("Nilai rad 5 dan tinggi 10");
+        System.out.println("Nilai rad in default: "+ R1 );
+        System.out.println("Nilai tinggi in default: "+ H1 );
+        System.out.println("Nilai luas alas: "+ one.getLuasAlas());
+        System.out.println("Nilai volume tabung: "+ one.getVolume());
+
+        Tabung two = new Tabung();
+        double R2 = two.rad = 7.5;
+        double H2 = two.high = 15.5;
+
+        System.out.println("\n\nNilai rad 7.5 dan tinggi 15.5");
+        System.out.println("Nilai rad in default: "+ R2 );
+        System.out.println("Nilai tinggi in default: "+ H2 );
+        System.out.println("Nilai luas alas: "+ two.getLuasAlas());
+        System.out.println("Nilai volume: "+ two.getVolume());
+    }
+}
