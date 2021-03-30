@@ -1,0 +1,34 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class NilaiDefault
+{
+    public static void main(String[] args)
+    {
+        Scanner put = new Scanner(System.in);
+
+        Tabung go1 = new Tabung();
+
+        System.out.println("Contructor nilai default");
+        System.out.println("Nilai rad in default : "+ go1.rad);
+        System.out.println("Nilai tinggi in default : "+ go1.high);
+        System.out.println("Nilai luas Alas : "+ go1.getLuasAlas());
+        System.out.println("Nilai volume : "+ go1.getVolume());
+
+        System.out.println("\n\nInput contructor nilai bebas");
+        System.out.print("Input radius : ");
+        double radius = put.nextDouble();
+        System.out.print("Input tinggi : ");
+        double tinggi = put.nextDouble();
+
+        Tabung go2 = new Tabung();
+        go2.rad = radius;
+        go2.high = tinggi;
+
+        System.out.println("Nilai rad in input : "+ radius);
+        System.out.println("Nilai tinggi in input : "+ tinggi);
+        System.out.println("Nilai luas alas : "+ go2.getLuasAlas());
+        System.out.println("Nilai volume : "+ go2.getVolume());
+    }
+}
