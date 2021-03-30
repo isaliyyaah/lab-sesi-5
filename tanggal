@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
+
+public class Tanggal
+{
+    public static void main(String[] args)
+    {
+        SimpleDateFormat example = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat ex = new SimpleDateFormat("yyyy-mm-dd");
+
+        Calendar cal = Calendar.getInstance();
+
+        String date1 = example.format(cal.getTime());
+        String calc1 = ex.format(cal.getTime());
+        System.out.println("today: " + date1 +" or "+ calc1);
+
+        cal.setTimeInMillis(2000);
+        String date2 = example.format(cal.getTime());
+        String calc2 = ex.format(cal.getTime());
+        System.out.println("date on system: " + date2 + " or "+ calc2);
+
+        LocalDate after = LocalDate.parse(calc2);
+        LocalDate before = LocalDate.parse(calc1);
+
+        long day = ChronoUnit.DAYS.between(after,before);
+        long mo = ChronoUnit.MONTHS.between(before,after);
+        long ye = ChronoUnit.YEARS.between(before,after);
+
+        System.out.println(String.format("jumlah waktu adalah %d tahun %d bulan, %d hari ",ye,mo,day));
+    }
+}
